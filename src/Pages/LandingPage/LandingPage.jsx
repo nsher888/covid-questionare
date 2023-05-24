@@ -1,4 +1,4 @@
-import { LogoAnimation } from './components';
+import { LogoAnimation } from 'components';
 import { motion } from 'framer-motion';
 import './LandingPage.css';
 
