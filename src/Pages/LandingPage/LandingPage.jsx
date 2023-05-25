@@ -8,7 +8,7 @@ const LandingPage = () => {
     <div className='flex flex-col items-center justify-center min-h-screen gap-24 bg-gray-200'>
       <LogoAnimation />
       <Link to='/identification'>
-        <motion.a
+        <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -21,7 +21,7 @@ const LandingPage = () => {
           from={{ opacity: 0, y: -100 }}
         >
           კითხვარის დაწყება
-        </motion.a>
+        </motion.div>
       </Link>
     </div>
   );
