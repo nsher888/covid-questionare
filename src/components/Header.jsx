@@ -1,4 +1,4 @@
-import redberrylogo from 'assets/redberry-logo.svg';
+import redberrylogo from '@/assets/redberry-logo.svg';
 
 const Header = ({ page }) => {
   return (

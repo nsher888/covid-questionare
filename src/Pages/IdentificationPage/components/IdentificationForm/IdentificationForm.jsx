@@ -1,3 +1,5 @@
+import { RightArrow } from '@/components';
+
 const IdentificationForm = () => {
   return (
     <div className='flex-1'>
@@ -34,6 +36,19 @@ const IdentificationForm = () => {
           className='max-w-lg px-4 py-2 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
           placeholder='fbi@redberry.ge'
         />
+
+        <div className='max-w-xs mt-28'>
+          <p className='pt-5 border-t border-neutral-800 text-zinc-600'>
+            *-ით მონიშნული ველების შევსება სავალდებულოა
+          </p>
+        </div>
+
+        <button
+          type='submit'
+          className='absolute cursor-pointer -bottom-6 left-1/2'
+        >
+          <RightArrow />
+        </button>
       </form>
     </div>
   );

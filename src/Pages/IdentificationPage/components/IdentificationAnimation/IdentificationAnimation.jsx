@@ -1,5 +1,5 @@
-import backgroundImage from 'assets/scan2.png';
-import rectangle from 'assets/identification-rectangle.png';
+import backgroundImage from '@/assets/scan2.png';
+import rectangle from '@/assets/identification-rectangle.png';
 import { motion } from 'framer-motion';
 
 const IdentificationAnimation = () => {
