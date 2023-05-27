@@ -1,7 +1,7 @@
 import './App.css';
 import { IdentificationPage, LandingPage } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
-import { FormDataProvider } from './context/FormDataContext';
+import { FormDataProvider } from '@/context';
 
 function App() {
   return (
