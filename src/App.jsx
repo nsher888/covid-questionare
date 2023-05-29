@@ -1,10 +1,17 @@
 import './App.css';
-import LandingPage from './Pages/LandingPage/LandingPage';
+import { IdentificationPage, LandingPage } from '@/pages';
+import { Routes, Route } from 'react-router-dom';
+import { FormDataProvider } from '@/context';
 
 function App() {
   return (
     <>
-      <LandingPage />
+      <FormDataProvider>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='identification' element={<IdentificationPage />} />
+        </Routes>
+      </FormDataProvider>
     </>
   );
 }
