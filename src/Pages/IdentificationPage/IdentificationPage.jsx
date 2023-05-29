@@ -1,6 +1,6 @@
 import { Layout } from '@/components';
-import { IdentificationForm } from './components';
-import { IdentificationAnimation } from './components';
+import { IdentificationForm } from '@/components';
+import { IdentificationAnimation } from '@/components';
 
 const IdentificationPage = () => {
   return (
