@@ -1,5 +1,5 @@
 import './App.css';
-import { IdentificationPage, LandingPage } from '@/pages';
+import { IdentificationPage, LandingPage, CovidPage } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 import { FormDataProvider } from '@/context';
 
@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='identification' element={<IdentificationPage />} />
+          <Route path='covid' element={<CovidPage />} />
         </Routes>
       </FormDataProvider>
     </>

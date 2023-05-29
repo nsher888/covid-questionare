@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UseIdentificationForm = () => {
   const { formData } = useContext(FormDataContext);
@@ -15,6 +16,7 @@ const UseIdentificationForm = () => {
   const { updateFormData } = useContext(FormDataContext);
 
   const watchedFields = watch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (JSON.stringify(watchedFields) !== JSON.stringify(savedFormData)) {
@@ -25,6 +27,7 @@ const UseIdentificationForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
+    navigate('/covid');
   };
 
   return { register, handleSubmit, errors, onSubmit };
