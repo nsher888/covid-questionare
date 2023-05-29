@@ -32,8 +32,16 @@ const useCovidForm = () => {
   useEffect(() => {
     if (hadCovid === 'no' || hadCovid === 'now') {
       unregister('had_antibody_test');
+      unregister('covid_date');
     }
-  }, [hadCovid, unregister]);
+    if (antiBodies === 'false') {
+      unregister('antibodies_test_date');
+      unregister('antibodies_count');
+    }
+    if (antiBodies === 'true') {
+      unregister('covid_date');
+    }
+  }, [hadCovid, antiBodies, unregister]);
 
   return { register, handleSubmit, errors, onSubmit, hadCovid, antiBodies };
 };
