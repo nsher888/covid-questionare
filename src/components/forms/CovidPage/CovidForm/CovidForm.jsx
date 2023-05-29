@@ -3,8 +3,15 @@ import { RightArrow, LeftArrow, RadioInput, Label } from '@/components';
 import './CovidForm.css';
 
 const CovidForm = () => {
-  const { register, handleSubmit, onSubmit, errors, hadCovid, antiBodies } =
-    useCovidForm();
+  const {
+    register,
+    handleSubmit,
+    onSubmit,
+    errors,
+    hadCovid,
+    antiBodies,
+    navigateToPreviousPage,
+  } = useCovidForm();
 
   return (
     <div className='flex-1'>
@@ -110,7 +117,7 @@ const CovidForm = () => {
                 type='date'
                 id='covid_date'
                 name='covid_date'
-                className='w-full px-4 py-2 mb-6 bg-transparent border outline-none  placeholder-neutral-800 border-neutral-800'
+                className='w-full px-4 py-2 mb-6 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
                 {...register('covid_date', {
                   required: 'მოცემული ველის შევსება სავალდებულოა',
                 })}
@@ -122,8 +129,8 @@ const CovidForm = () => {
           </div>
         )}
 
-        <div className='absolute flex -bottom-6 left-1/2 gap-28'>
-          <button>
+        <div className='absolute flex -bottom-6 left-[45%] gap-28'>
+          <button type='button' onClick={navigateToPreviousPage}>
             <LeftArrow />
           </button>
 

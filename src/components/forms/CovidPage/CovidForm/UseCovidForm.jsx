@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { FormDataContext } from '@/context';
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const useCovidForm = () => {
   const { formData } = useContext(FormDataContext);
@@ -18,6 +19,8 @@ const useCovidForm = () => {
   const hadCovid = watchedFields.had_covid;
   const antiBodies = watchedFields.had_antibody_test;
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (JSON.stringify(watchedFields) !== JSON.stringify(savedFormData)) {
       updateFormData(watchedFields);
@@ -27,6 +30,10 @@ const useCovidForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
+  };
+
+  const navigateToPreviousPage = () => {
+    navigate('/identification');
   };
 
   useEffect(() => {
@@ -43,7 +50,15 @@ const useCovidForm = () => {
     }
   }, [hadCovid, antiBodies, unregister]);
 
-  return { register, handleSubmit, errors, onSubmit, hadCovid, antiBodies };
+  return {
+    register,
+    handleSubmit,
+    errors,
+    onSubmit,
+    hadCovid,
+    antiBodies,
+    navigateToPreviousPage,
+  };
 };
 
 export default useCovidForm;

@@ -92,7 +92,7 @@ const IdentificationForm = () => {
 
         <button
           type='submit'
-          className='absolute cursor-pointer -bottom-6 left-1/2'
+          className='absolute cursor-pointer -bottom-6 left-[45%]'
         >
           <RightArrow />
         </button>
