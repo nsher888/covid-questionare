@@ -5,6 +5,7 @@ import {
   RadioInput,
   Label,
   DateInput,
+  CustomInput,
 } from '@/components';
 import './CovidForm.css';
 
@@ -96,12 +97,11 @@ const CovidForm = () => {
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.antibodies_test_date?.message}
               </p>
-              <input
+              <CustomInput
                 type='number'
-                name='antibodies.count'
+                name='antibodies_count'
                 placeholder='ანტისხეულების რაოდენობა'
-                className='relative w-full px-4 py-2 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
-                {...register('antibodies_count', {
+                register={register('antibodies_count', {
                   required: 'მოცემული ველის შევსება სავალდებულოა',
                 })}
               />
