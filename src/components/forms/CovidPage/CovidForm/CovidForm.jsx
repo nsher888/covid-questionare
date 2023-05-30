@@ -1,5 +1,11 @@
 import useCovidForm from './UseCovidForm';
-import { RightArrow, LeftArrow, RadioInput, Label } from '@/components';
+import {
+  RightArrow,
+  LeftArrow,
+  RadioInput,
+  Label,
+  DateInput,
+} from '@/components';
 import './CovidForm.css';
 
 const CovidForm = () => {
@@ -82,14 +88,10 @@ const CovidForm = () => {
           <div className='flex flex-col'>
             <Label title='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*' />
             <div className='max-w-lg pl-5 mt-4'>
-              <input
-                type='date'
+              <DateInput
                 id='antibodies_test_date'
-                name='antibodies.test_date'
-                className='relative w-full px-4 py-2 mb-6 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
-                {...register('antibodies_test_date', {
-                  required: 'მოცემული ველის შევსება სავალდებულოა',
-                })}
+                name='antibodies_test_date'
+                register={register}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.antibodies_test_date?.message}
@@ -113,14 +115,10 @@ const CovidForm = () => {
           <div>
             <Label title='მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*' />
             <div className='relative max-w-lg pl-5 mt-4'>
-              <input
-                type='date'
+              <DateInput
                 id='covid_date'
                 name='covid_date'
-                className='w-full px-4 py-2 mb-6 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
-                {...register('covid_date', {
-                  required: 'მოცემული ველის შევსება სავალდებულოა',
-                })}
+                register={register}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.covid_date?.message}
