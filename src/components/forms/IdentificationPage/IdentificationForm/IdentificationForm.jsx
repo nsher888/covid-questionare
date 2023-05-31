@@ -1,4 +1,4 @@
-import { RightArrow } from '@/components';
+import { RightArrow, CustomInput, Label } from '@/components';
 import UseIdentificationForm from './UseIdentificationForm';
 
 const IdentificationForm = () => {
@@ -12,15 +12,13 @@ const IdentificationForm = () => {
         noValidate
       >
         <div className='relative flex flex-col mb-12'>
-          <label htmlFor='first_name' className='mb-3 text-xl font-bold'>
-            სახელი*
-          </label>
-          <input
+          <Label title='სახელი*' htmlFor='first_name' />
+          <CustomInput
             type='text'
+            id='first_name'
             name='first_name'
-            className='max-w-lg px-4 py-2 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
             placeholder='იოსებ'
-            {...register('first_name', {
+            register={register('first_name', {
               required: 'მოცემული ველის შევსება სავალდებულოა',
               minLength: {
                 value: 2,
@@ -34,16 +32,13 @@ const IdentificationForm = () => {
         </div>
 
         <div className='relative flex flex-col mb-12'>
-          <label htmlFor='last_name' className='mb-3 text-xl font-bold'>
-            გვარი*
-          </label>
-          <input
+          <Label title='გვარი*' htmlFor='last_name' />
+          <CustomInput
             type='text'
-            name='last_name'
             id='last_name'
-            className='max-w-lg px-4 py-2 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
+            name='last_name'
             placeholder='ჯუღაშვილი'
-            {...register('last_name', {
+            register={register('last_name', {
               required: 'მოცემული ველის შევსება სავალდებულოა',
               minLength: {
                 value: 2,
@@ -57,16 +52,13 @@ const IdentificationForm = () => {
         </div>
 
         <div className='relative flex flex-col mb-12'>
-          <label htmlFor='email' className='mb-3 text-xl font-bold'>
-            მეილი*
-          </label>
-          <input
+          <Label title='მეილი*' htmlFor='email' />
+          <CustomInput
             type='email'
-            name='email'
             id='email'
-            className='max-w-lg px-4 py-2 bg-transparent border outline-none placeholder-neutral-800 border-neutral-800'
+            name='email'
             placeholder='fbi@redberry.ge'
-            {...register('email', {
+            register={register('email', {
               required: 'მოცემული ველის შევსება სავალდებულოა',
               validate: {
                 validFormat: (value) =>
@@ -92,7 +84,7 @@ const IdentificationForm = () => {
 
         <button
           type='submit'
-          className='absolute cursor-pointer -bottom-6 left-1/2'
+          className='absolute cursor-pointer -bottom-6 left-[45%]'
         >
           <RightArrow />
         </button>
