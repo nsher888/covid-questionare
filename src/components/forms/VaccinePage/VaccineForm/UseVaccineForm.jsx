@@ -3,11 +3,11 @@ import { FormDataContext } from '@/context';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const useCovidForm = () => {
+const useVaccineForm = () => {
   const { formData } = useContext(FormDataContext);
   const [savedFormData, setSavedFormData] = useState(formData);
 
-  const { register, handleSubmit, formState, watch, unregister } = useForm({
+  const { register, handleSubmit, formState, watch } = useForm({
     defaultValues: formData,
     mode: 'onChange',
   });
@@ -16,8 +16,6 @@ const useCovidForm = () => {
   const { updateFormData } = useContext(FormDataContext);
 
   const watchedFields = watch();
-  const hadCovid = watchedFields.had_covid;
-  const antiBodies = watchedFields.had_antibody_test;
 
   const navigate = useNavigate();
 
@@ -30,36 +28,19 @@ const useCovidForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
-    navigate('/vaccine');
   };
 
   const navigateToPreviousPage = () => {
-    navigate('/identification');
+    navigate('/covid');
   };
-
-  useEffect(() => {
-    if (hadCovid === 'no' || hadCovid === 'now') {
-      unregister('had_antibody_test');
-      unregister('covid_date');
-    }
-    if (antiBodies === 'false') {
-      unregister('antibodies_test_date');
-      unregister('antibodies_count');
-    }
-    if (antiBodies === 'true') {
-      unregister('covid_date');
-    }
-  }, [hadCovid, antiBodies, unregister]);
 
   return {
     register,
     handleSubmit,
     errors,
     onSubmit,
-    hadCovid,
-    antiBodies,
     navigateToPreviousPage,
   };
 };
 
-export default useCovidForm;
+export default useVaccineForm;
