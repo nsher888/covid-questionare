@@ -1,6 +1,6 @@
 import TextAreaInput from '../../../TextAreaInput';
 import usePreferencesForm from './UsePreferencesForm';
-import { RightArrow, LeftArrow, RadioInput, Label } from '@/components';
+import { LeftArrow, RadioInput, Label } from '@/components';
 
 const PreferencesForm = () => {
   const { register, handleSubmit, onSubmit, errors, navigateToPreviousPage } =
@@ -143,13 +143,16 @@ const PreferencesForm = () => {
           />
         </div>
 
+        <button
+          className='self-end px-6 py-4 mb-12 text-lg text-white bg-cyan-700 rounded-3xl'
+          type='submit'
+        >
+          დასრულება
+        </button>
+
         <div className='absolute flex -bottom-6 left-[45%] gap-28'>
           <button type='button' onClick={navigateToPreviousPage}>
             <LeftArrow />
-          </button>
-
-          <button type='submit'>
-            <RightArrow />
           </button>
         </div>
       </form>
