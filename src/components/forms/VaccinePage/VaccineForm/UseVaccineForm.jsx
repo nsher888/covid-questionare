@@ -31,10 +31,11 @@ const useVaccineForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
+    navigate('/preferences');
   };
 
   const navigateToPreviousPage = () => {
-    navigate('/covid');
+    navigate('/vaccine');
   };
 
   useEffect(() => {

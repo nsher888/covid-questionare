@@ -7,7 +7,7 @@ const usePreferencesForm = () => {
   const { formData } = useContext(FormDataContext);
   const [savedFormData, setSavedFormData] = useState(formData);
 
-  const { register, handleSubmit, formState, watch, unregister } = useForm({
+  const { register, handleSubmit, formState, watch } = useForm({
     defaultValues: formData,
     mode: 'onChange',
   });
@@ -16,9 +16,6 @@ const usePreferencesForm = () => {
   const { updateFormData } = useContext(FormDataContext);
 
   const watchedFields = watch();
-  const hadVaccine = watchedFields.had_vaccine;
-  const vaccineStage = watchedFields.vaccination_stage;
-  const notVaccinated = watchedFields.not_vaccinated;
 
   const navigate = useNavigate();
 
@@ -34,17 +31,8 @@ const usePreferencesForm = () => {
   };
 
   const navigateToPreviousPage = () => {
-    navigate('/covid');
+    navigate('/vaccine');
   };
-
-  useEffect(() => {
-    if (hadVaccine === 'true') {
-      unregister('not_vaccinated');
-    }
-    if (hadVaccine === 'false') {
-      unregister('vaccination_stage');
-    }
-  }, [hadVaccine, unregister]);
 
   return {
     register,
@@ -52,9 +40,6 @@ const usePreferencesForm = () => {
     errors,
     onSubmit,
     navigateToPreviousPage,
-    hadVaccine,
-    vaccineStage,
-    notVaccinated,
   };
 };
 
