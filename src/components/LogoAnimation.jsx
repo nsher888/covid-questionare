@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { LandingLogo } from '@/assets';
 
 const LogoAnimation = () => {
   return (
@@ -7,7 +8,7 @@ const LogoAnimation = () => {
       animate={{ scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <img src='src/assets/logo.svg' className='w-24 h-24 ' alt='Image' />
+      <img src={LandingLogo} className='w-24 h-24 ' alt='Image' />
     </motion.div>
   );
 };
