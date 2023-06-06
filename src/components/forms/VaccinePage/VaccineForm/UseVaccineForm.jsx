@@ -35,7 +35,7 @@ const useVaccineForm = () => {
   };
 
   const navigateToPreviousPage = () => {
-    navigate('/vaccine');
+    navigate('/covid');
   };
 
   useEffect(() => {
