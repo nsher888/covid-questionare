@@ -8,3 +8,6 @@ export { default as IdentificationFigure } from './identification-rectangle.png'
 
 export { default as CovidBackground } from './vaccinate2.png';
 export { default as CovidFigure } from './circle.png';
+
+export { default as PreferencesBackground } from './bike.png';
+export { default as PreferencesFigure } from './heart.png';
