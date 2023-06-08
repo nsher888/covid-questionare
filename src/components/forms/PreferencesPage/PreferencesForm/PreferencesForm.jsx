@@ -1,4 +1,4 @@
-import TextAreaInput from '../../../TextAreaInput';
+import TextAreaInput from '@/components';
 import usePreferencesForm from './UsePreferencesForm';
 import { LeftArrow, RadioInput, Label } from '@/components';
 
