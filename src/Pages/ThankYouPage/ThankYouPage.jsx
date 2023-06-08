@@ -1,9 +1,7 @@
 import { ThankYouStar1 } from '@/assets';
 import { motion } from 'framer-motion';
-import useThankYouPage from './UseThankYouPage';
 
 const ThankYouPage = () => {
-  useThankYouPage();
   return (
     <div className='grid min-h-screen bg-neutral-800 place-items-center'>
       <div className='relative'>
@@ -15,7 +13,7 @@ const ThankYouPage = () => {
           transition={{ delay: 1, duration: 0.5 }}
         />
         <motion.h1
-          className='text-6xl font-bold text-white'
+          className='text-6xl text-white'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
