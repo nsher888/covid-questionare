@@ -65,7 +65,7 @@ const VaccineForm = () => {
               })}
             />
             <RadioInput
-              value='first_dosage_and_not_registered_on_the_second'
+              value='first_dosage_and_not_registered_yet'
               label='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
               error={errors.vaccination_stage?.message}
               register={register('vaccination_stage', {
@@ -77,8 +77,7 @@ const VaccineForm = () => {
               {errors.vaccination_stage?.message}
             </p>
 
-            {vaccineStage ===
-              'first_dosage_and_not_registered_on_the_second' && (
+            {vaccineStage === 'first_dosage_and_not_registered_yet' && (
               <p className='mt-10 ml-10 text-lg text-neutral-800'>
                 რომ არ გადადო, <br /> ბარემ ახლავე დარეგისტრირდი <br />
                 <a className='text-cyan-600' href='https://booking.moh.gov.ge/'>
@@ -94,35 +93,35 @@ const VaccineForm = () => {
             <Label title='რას ელოდები?*' />
 
             <RadioInput
-              value='registered_and_waiting_for_a_date'
+              value='registered_and_waiting'
               label='დარეგისტრირებული ვარ და ველოდები რიცხვს'
-              error={errors.not_vaccinated?.message}
-              register={register('not_vaccinated', {
+              error={errors.i_am_waiting?.message}
+              register={register('i_am_waiting', {
                 required: 'მოცემული ველის შევსება სავალდებულოა',
               })}
             />
             <RadioInput
-              value='not_going_to_vaccinate'
+              value='not_planning'
               label='არ ვგეგმავ'
-              error={errors.not_vaccinated?.message}
-              register={register('not_vaccinated', {
+              error={errors.i_am_waiting?.message}
+              register={register('i_am_waiting', {
                 required: 'მოცემული ველის შევსება სავალდებულოა',
               })}
             />
             <RadioInput
-              value='first_dosage_and_not_registered_on_the_second'
+              value='had_covid_and_planning_to_be_vaccinated'
               label='გადატანილი მაქვს და ვგეგმავ აცრას'
-              error={errors.not_vaccinated?.message}
-              register={register('not_vaccinated', {
+              error={errors.i_am_waiting?.message}
+              register={register('i_am_waiting', {
                 required: 'მოცემული ველის შევსება სავალდებულოა',
               })}
             />
 
             <p className='absolute text-orange-600 -bottom-7 left-5'>
-              {errors.not_vaccinated?.message}
+              {errors.i_am_waiting?.message}
             </p>
 
-            {notVaccinated === 'not_going_to_vaccinate' && (
+            {notVaccinated === 'not_planning' && (
               <div className='mt-10 ml-10 text-lg text-neutral-800'>
                 👉
                 <a className='text-cyan-600' href='https://booking.moh.gov.ge/'>
@@ -131,8 +130,7 @@ const VaccineForm = () => {
               </div>
             )}
 
-            {notVaccinated ===
-              'first_dosage_and_not_registered_on_the_second' && (
+            {notVaccinated === 'had_covid_and_planning_to_be_vaccinated' && (
               <div className='mt-10 ml-10 text-lg text-neutral-800'>
                 <p>
                   ახალი პროტოკოლით კოვიდის გადატანიდან 1 <br />

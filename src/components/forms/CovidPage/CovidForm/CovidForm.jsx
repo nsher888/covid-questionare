@@ -48,7 +48,7 @@ const CovidForm = () => {
           />
 
           <RadioInput
-            value='now'
+            value='have_right_now'
             label='ახლა მაქვს'
             error={errors.had_covid?.message}
             register={register('had_covid', {
@@ -89,24 +89,20 @@ const CovidForm = () => {
           <div className='flex flex-col'>
             <Label title='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*' />
             <div className='max-w-lg pl-5 mt-4'>
-              <DateInput
-                id='antibodies_test_date'
-                name='antibodies_test_date'
-                register={register}
-              />
+              <DateInput id='test_date' name='test_date' register={register} />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
-                {errors.antibodies_test_date?.message}
+                {errors.test_date?.message}
               </p>
               <CustomInput
                 type='number'
-                name='antibodies_count'
+                name='number'
                 placeholder='ანტისხეულების რაოდენობა'
-                register={register('antibodies_count', {
+                register={register('number', {
                   required: 'მოცემული ველის შევსება სავალდებულოა',
                 })}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
-                {errors.antibodies_count?.message}
+                {errors.number?.message}
               </p>
             </div>
           </div>
@@ -116,12 +112,12 @@ const CovidForm = () => {
             <Label title='მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*' />
             <div className='relative max-w-lg pl-5 mt-4'>
               <DateInput
-                id='covid_date'
-                name='covid_date'
+                id='covid_sickness_date'
+                name='covid_sickness_date'
                 register={register}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
-                {errors.covid_date?.message}
+                {errors.covid_sickness_date?.message}
               </p>
             </div>
           </div>

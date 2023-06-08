@@ -38,13 +38,16 @@ const useCovidForm = () => {
   };
 
   useEffect(() => {
-    if (hadCovid === 'no' || hadCovid === 'now') {
+    if (hadCovid === 'no' || hadCovid === 'have_right_now') {
       unregister('had_antibody_test');
       unregister('covid_date');
+      unregister('test_date');
+      unregister('number');
+      unregister('covid_sickness_date');
     }
     if (antiBodies === 'false') {
-      unregister('antibodies_test_date');
-      unregister('antibodies_count');
+      unregister('test_date');
+      unregister('number');
     }
     if (antiBodies === 'true') {
       unregister('covid_date');

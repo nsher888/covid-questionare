@@ -14,8 +14,8 @@ const useThankYouPage = () => {
 
   if (formData.antibodies_test_date && formData.antibodies_count) {
     filteredData.antibodies = {
-      test_date: new Date(formData.antibodies_test_date).toISOString(),
-      number: parseInt(formData.antibodies_count),
+      test_date: new Date(formData.test_date).toISOString(),
+      number: parseInt(formData.number),
     };
   }
 

@@ -18,7 +18,7 @@ const useVaccineForm = () => {
   const watchedFields = watch();
   const hadVaccine = watchedFields.had_vaccine;
   const vaccineStage = watchedFields.vaccination_stage;
-  const notVaccinated = watchedFields.not_vaccinated;
+  const notVaccinated = watchedFields.i_am_waiting;
 
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const useVaccineForm = () => {
 
   useEffect(() => {
     if (hadVaccine === 'true') {
-      unregister('not_vaccinated');
+      unregister('i_am_waiting');
     }
     if (hadVaccine === 'false') {
       unregister('vaccination_stage');
