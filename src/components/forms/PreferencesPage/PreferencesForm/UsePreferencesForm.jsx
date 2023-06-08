@@ -3,11 +3,11 @@ import { FormDataContext } from '@/context';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const useVaccineForm = () => {
+const usePreferencesForm = () => {
   const { formData } = useContext(FormDataContext);
   const [savedFormData, setSavedFormData] = useState(formData);
 
-  const { register, handleSubmit, formState, watch, unregister } = useForm({
+  const { register, handleSubmit, formState, watch } = useForm({
     defaultValues: formData,
     mode: 'onChange',
   });
@@ -16,9 +16,6 @@ const useVaccineForm = () => {
   const { updateFormData } = useContext(FormDataContext);
 
   const watchedFields = watch();
-  const hadVaccine = watchedFields.had_vaccine;
-  const vaccineStage = watchedFields.vaccination_stage;
-  const notVaccinated = watchedFields.not_vaccinated;
 
   const navigate = useNavigate();
 
@@ -31,21 +28,11 @@ const useVaccineForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
-    navigate('/preferences');
   };
 
   const navigateToPreviousPage = () => {
-    navigate('/covid');
+    navigate('/vaccine');
   };
-
-  useEffect(() => {
-    if (hadVaccine === 'true') {
-      unregister('not_vaccinated');
-    }
-    if (hadVaccine === 'false') {
-      unregister('vaccination_stage');
-    }
-  }, [hadVaccine, unregister]);
 
   return {
     register,
@@ -53,10 +40,7 @@ const useVaccineForm = () => {
     errors,
     onSubmit,
     navigateToPreviousPage,
-    hadVaccine,
-    vaccineStage,
-    notVaccinated,
   };
 };
 
-export default useVaccineForm;
+export default usePreferencesForm;
