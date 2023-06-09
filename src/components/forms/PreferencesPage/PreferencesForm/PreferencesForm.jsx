@@ -1,6 +1,5 @@
-import TextAreaInput from '@/components';
 import usePreferencesForm from './UsePreferencesForm';
-import { LeftArrow, RadioInput, Label } from '@/components';
+import { LeftArrow, RadioInput, Label, TextAreaInput } from '@/components';
 
 const PreferencesForm = () => {
   const { register, handleSubmit, onSubmit, errors, navigateToPreviousPage } =

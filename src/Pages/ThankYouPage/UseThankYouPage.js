@@ -21,10 +21,8 @@ const useThankYouPage = () => {
 
   filteredData.had_vaccine = formData.had_vaccine === 'true';
 
-  console.log(filteredData);
-
   useEffect(() => {
-    fetch('https://covid19.devtest.ge/api/create', {
+    fetch(import.meta.env.VITE_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +30,8 @@ const useThankYouPage = () => {
       body: JSON.stringify(filteredData),
     })
       .then((response) => {
-        console.log(response);
+        sessionStorage.clear();
+        return response.statusText;
       })
       .catch((error) => {
         console.error('Error:', error);
