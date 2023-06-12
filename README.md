@@ -40,13 +40,21 @@ git clone https://github.com/RedberryInternship/niko-shervashidze-covid-question
 cd covid-questionare
 ```
 
-3\. Next step requires you to run `npm install` in order to install all the dependencies.
+3\. Copy the .env.example file and rename it as .env:
+
+```sh
+cp .env.example .env
+```
+
+4\. Open the .env file and update the VITE_API_URL variable with actual API URL.
+
+5\. Next step requires you to run `npm install` in order to install all the dependencies.
 
 ```sh
 npm install
 ```
 
-4\. Finally, you can run application locally with:
+6\. Finally, you can run application locally with:
 
 ```sh
 npm run dev
