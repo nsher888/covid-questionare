@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/Helvetica-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Contractica';
+  src: url('./assets/fonts/TBCContracticaCAPS-Bold.woff2') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helvetica Bold';
+  src: url('./assets/fonts/Helvetica-Bold.ttf') format('woff2');
+}
