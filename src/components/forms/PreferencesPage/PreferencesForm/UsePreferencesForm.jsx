@@ -28,6 +28,7 @@ const usePreferencesForm = () => {
 
   const onSubmit = (data) => {
     updateFormData(data);
+    navigate('/thankyou');
   };
 
   const navigateToPreviousPage = () => {

@@ -1,6 +1,5 @@
-import TextAreaInput from '@/components';
 import usePreferencesForm from './UsePreferencesForm';
-import { LeftArrow, RadioInput, Label } from '@/components';
+import { LeftArrow, RadioInput, Label, TextAreaInput } from '@/components';
 
 const PreferencesForm = () => {
   const { register, handleSubmit, onSubmit, errors, navigateToPreviousPage } =
@@ -34,7 +33,7 @@ const PreferencesForm = () => {
           />
 
           <RadioInput
-            value='once_in_two_weeks'
+            value='once_in_a_two_weeks'
             label='ორ კვირაში ერთხელ'
             error={errors.non_formal_meetings?.message}
             register={register('non_formal_meetings', {
@@ -43,7 +42,7 @@ const PreferencesForm = () => {
           />
 
           <RadioInput
-            value='once_a_month'
+            value='once_in_a_month'
             label='თვეში ერთხელ'
             error={errors.non_formal_meetings?.message}
             register={register('non_formal_meetings', {

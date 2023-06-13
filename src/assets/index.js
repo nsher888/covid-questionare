@@ -11,3 +11,5 @@ export { default as CovidFigure } from './circle.png';
 
 export { default as PreferencesBackground } from './bike.png';
 export { default as PreferencesFigure } from './heart.png';
+
+export { default as ThankYouStar1 } from './laststar.png';
