@@ -8,7 +8,7 @@ const RadioOption = ({ value, label, register }) => {
           value={value}
           {...register}
         />
-        <span className='text-xl text-neutral-800'>{label}</span>
+        <span className='text-xl text-neutral-800 font-helvetica'>{label}</span>
       </label>
     </>
   );

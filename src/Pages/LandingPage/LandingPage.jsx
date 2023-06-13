@@ -17,7 +17,7 @@ const LandingPage = () => {
             type: 'physics',
             stiffness: 120,
           }}
-          className='max-w-[170px]  cursor-pointer text-3xl font-bold text-center font-Contractica-CAPS text-neutral-800 landing-text-shadow'
+          className='max-w-[170px]  cursor-pointer text-3xl font-bold text-center font-Contractica text-neutral-800 landing-text-shadow'
           from={{ opacity: 0, y: -100 }}
         >
           კითხვარის დაწყება

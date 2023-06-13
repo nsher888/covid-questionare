@@ -143,7 +143,7 @@ const PreferencesForm = () => {
         </div>
 
         <button
-          className='self-end px-6 py-4 mb-12 text-lg text-white bg-cyan-700 rounded-3xl'
+          className='flex items-center self-end px-6 py-4 mb-12 text-lg font-bold text-white bg-cyan-700 rounded-3xl font-Contractica'
           type='submit'
         >
           დასრულება
