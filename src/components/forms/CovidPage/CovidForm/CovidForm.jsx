@@ -89,7 +89,11 @@ const CovidForm = () => {
           <div className='flex flex-col'>
             <Label title='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*' />
             <div className='max-w-lg pl-5 mt-4'>
-              <DateInput id='test_date' name='test_date' register={register} />
+              <DateInput
+                id='test_date'
+                name='test_date'
+                register={register('test_date')}
+              />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.test_date?.message}
               </p>
@@ -97,9 +101,7 @@ const CovidForm = () => {
                 type='number'
                 name='number'
                 placeholder='ანტისხეულების რაოდენობა'
-                register={register('number', {
-                  required: 'მოცემული ველის შევსება სავალდებულოა',
-                })}
+                register={register('number')}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.number?.message}
@@ -114,7 +116,9 @@ const CovidForm = () => {
               <DateInput
                 id='covid_sickness_date'
                 name='covid_sickness_date'
-                register={register}
+                register={register('covid_sickness_date', {
+                  required: 'მოცემული ველის შევსება სავალდებულოა',
+                })}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5'>
                 {errors.covid_sickness_date?.message}
