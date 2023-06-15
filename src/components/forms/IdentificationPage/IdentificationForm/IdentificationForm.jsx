@@ -26,7 +26,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.first_name?.message}
           </p>
         </div>
@@ -46,7 +46,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.last_name?.message}
           </p>
         </div>
@@ -71,7 +71,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.email?.message}
           </p>
         </div>
