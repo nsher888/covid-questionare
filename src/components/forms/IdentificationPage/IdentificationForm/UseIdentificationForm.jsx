@@ -30,7 +30,9 @@ const UseIdentificationForm = () => {
     navigate('/covid');
   };
 
-  return { register, handleSubmit, errors, onSubmit };
+  const { isValid } = formState;
+
+  return { register, handleSubmit, errors, onSubmit, isValid };
 };
 
 export default UseIdentificationForm;

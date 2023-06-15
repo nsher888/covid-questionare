@@ -54,6 +54,8 @@ const useCovidForm = () => {
     }
   }, [hadCovid, antiBodies, unregister]);
 
+  const { isValid } = formState;
+
   return {
     register,
     handleSubmit,
@@ -62,6 +64,7 @@ const useCovidForm = () => {
     hadCovid,
     antiBodies,
     navigateToPreviousPage,
+    isValid,
   };
 };
 
