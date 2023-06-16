@@ -1,6 +1,8 @@
 import { Layout, VaccineForm, VaccineAnimation } from '@/components';
+import { useDocumentTitle } from '@/hooks';
 
-const IdentificationPage = () => {
+const IdentificationPage = ({ title }) => {
+  useDocumentTitle(title);
   return (
     <Layout page={3}>
       <div className='relative flex justify-between'>

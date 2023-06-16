@@ -1,9 +1,11 @@
 import { ThankYouStar1 } from '@/assets';
 import { motion } from 'framer-motion';
 import useThankYouPage from './UseThankYouPage';
+import { useDocumentTitle } from '@/hooks';
 
-const ThankYouPage = () => {
+const ThankYouPage = ({ title }) => {
   useThankYouPage();
+  useDocumentTitle(title);
   return (
     <div className='grid min-h-screen bg-neutral-800 place-items-center'>
       <div className='relative'>

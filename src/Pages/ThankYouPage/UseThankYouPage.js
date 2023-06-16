@@ -3,7 +3,6 @@ import { FormDataContext } from '@/context';
 
 const useThankYouPage = () => {
   const { formData, clearFormData } = useContext(FormDataContext);
-
   const filteredData = {};
 
   for (const key in formData) {
