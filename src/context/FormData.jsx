@@ -16,8 +16,14 @@ export const FormDataProvider = ({ children }) => {
     setFormData(data);
   };
 
+  const clearFormData = () => {
+    setFormData({});
+  };
+
   return (
-    <FormDataContext.Provider value={{ formData, updateFormData }}>
+    <FormDataContext.Provider
+      value={{ formData, updateFormData, clearFormData }}
+    >
       {children}
     </FormDataContext.Provider>
   );
