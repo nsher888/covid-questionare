@@ -1,5 +1,11 @@
-import useVaccineForm from './useVaccineForm';
-import { RightArrow, LeftArrow, RadioInput, Label } from '@/components';
+import useVaccineForm from './UseVaccineForm';
+import {
+  RightArrow,
+  LeftArrow,
+  RadioInput,
+  Label,
+  DisabledRightArrow,
+} from '@/components';
 
 const VaccineForm = () => {
   const {
@@ -11,6 +17,7 @@ const VaccineForm = () => {
     hadVaccine,
     vaccineStage,
     notVaccinated,
+    isValid,
   } = useVaccineForm();
 
   return (
@@ -39,7 +46,7 @@ const VaccineForm = () => {
               required: 'მოცემული ველის შევსება სავალდებულოა',
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
             {errors.had_vaccine?.message}
           </p>
         </div>
@@ -73,7 +80,7 @@ const VaccineForm = () => {
               })}
             />
 
-            <p className='absolute text-orange-600 -bottom-7 left-5'>
+            <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
               {errors.vaccination_stage?.message}
             </p>
 
@@ -117,7 +124,7 @@ const VaccineForm = () => {
               })}
             />
 
-            <p className='absolute text-orange-600 -bottom-7 left-5'>
+            <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
               {errors.i_am_waiting?.message}
             </p>
 
@@ -151,8 +158,8 @@ const VaccineForm = () => {
             <LeftArrow />
           </button>
 
-          <button type='submit'>
-            <RightArrow />
+          <button type='submit' {...(isValid ? {} : { disabled: true })}>
+            {isValid ? <RightArrow /> : <DisabledRightArrow />}
           </button>
         </div>
       </form>

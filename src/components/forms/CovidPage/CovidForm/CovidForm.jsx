@@ -6,6 +6,7 @@ import {
   Label,
   DateInput,
   CustomInput,
+  DisabledRightArrow,
 } from '@/components';
 import './CovidForm.css';
 
@@ -18,6 +19,7 @@ const CovidForm = () => {
     hadCovid,
     antiBodies,
     navigateToPreviousPage,
+    isValid,
   } = useCovidForm();
 
   return (
@@ -55,7 +57,7 @@ const CovidForm = () => {
               required: 'მოცემული ველის შევსება სავალდებულოა',
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica '>
             {errors.had_covid?.message}
           </p>
         </div>
@@ -79,7 +81,7 @@ const CovidForm = () => {
                 required: 'მოცემული ველის შევსება სავალდებულოა',
               })}
             />
-            <p className='text-orange-600 -bottom-7 left-5'>
+            <p className='text-orange-600 -bottom-7 left-5 font-helvetica'>
               {errors.had_antibody_test?.message}
             </p>
           </div>
@@ -89,12 +91,8 @@ const CovidForm = () => {
           <div className='flex flex-col'>
             <Label title='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*' />
             <div className='max-w-lg pl-5 mt-4'>
-              <DateInput
-                id='test_date'
-                name='test_date'
-                register={register('test_date')}
-              />
-              <p className='absolute text-orange-600 -bottom-7 left-5'>
+              <DateInput id='test_date' name='test_date'register={register('test_date')} />
+              <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
                 {errors.test_date?.message}
               </p>
               <CustomInput
@@ -103,7 +101,7 @@ const CovidForm = () => {
                 placeholder='ანტისხეულების რაოდენობა'
                 register={register('number')}
               />
-              <p className='absolute text-orange-600 -bottom-7 left-5'>
+              <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
                 {errors.number?.message}
               </p>
             </div>
@@ -120,7 +118,7 @@ const CovidForm = () => {
                   required: 'მოცემული ველის შევსება სავალდებულოა',
                 })}
               />
-              <p className='absolute text-orange-600 -bottom-7 left-5'>
+              <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
                 {errors.covid_sickness_date?.message}
               </p>
             </div>
@@ -132,8 +130,8 @@ const CovidForm = () => {
             <LeftArrow />
           </button>
 
-          <button type='submit'>
-            <RightArrow />
+          <button type='submit' {...(isValid ? {} : { disabled: true })}>
+            {isValid ? <RightArrow /> : <DisabledRightArrow />}
           </button>
         </div>
       </form>

@@ -6,6 +6,7 @@ import {
   VaccinePage,
   PreferencesPage,
   ThankYouPage,
+  ErrorPage,
 } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 import { FormDataProvider } from '@/context';
@@ -21,6 +22,7 @@ function App() {
           <Route path='vaccine' element={<VaccinePage />} />
           <Route path='preferences' element={<PreferencesPage />} />
           <Route path='thankyou' element={<ThankYouPage />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </FormDataProvider>
     </>

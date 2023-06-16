@@ -47,6 +47,8 @@ const useVaccineForm = () => {
     }
   }, [hadVaccine, unregister]);
 
+  const { isValid } = formState;
+
   return {
     register,
     handleSubmit,
@@ -56,6 +58,7 @@ const useVaccineForm = () => {
     hadVaccine,
     vaccineStage,
     notVaccinated,
+    isValid,
   };
 };
 

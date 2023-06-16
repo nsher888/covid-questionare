@@ -1,8 +1,14 @@
-import { RightArrow, CustomInput, Label } from '@/components';
+import {
+  RightArrow,
+  CustomInput,
+  Label,
+  DisabledRightArrow,
+} from '@/components';
 import UseIdentificationForm from './UseIdentificationForm';
 
 const IdentificationForm = () => {
-  const { register, handleSubmit, onSubmit, errors } = UseIdentificationForm();
+  const { register, handleSubmit, onSubmit, errors, isValid } =
+    UseIdentificationForm();
 
   return (
     <div className='flex-1'>
@@ -26,7 +32,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.first_name?.message}
           </p>
         </div>
@@ -46,7 +52,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.last_name?.message}
           </p>
         </div>
@@ -71,7 +77,7 @@ const IdentificationForm = () => {
               },
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.email?.message}
           </p>
         </div>
@@ -84,9 +90,10 @@ const IdentificationForm = () => {
 
         <button
           type='submit'
+          {...(isValid ? {} : { disabled: true })}
           className='absolute cursor-pointer -bottom-6 left-[45%]'
         >
-          <RightArrow />
+          {isValid ? <RightArrow /> : <DisabledRightArrow />}
         </button>
       </form>
     </div>
