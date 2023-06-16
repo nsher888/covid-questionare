@@ -1,5 +1,11 @@
-import useVaccineForm from './useVaccineForm';
-import { RightArrow, LeftArrow, RadioInput, Label } from '@/components';
+import useVaccineForm from './UseVaccineForm';
+import {
+  RightArrow,
+  LeftArrow,
+  RadioInput,
+  Label,
+  DisabledRightArrow,
+} from '@/components';
 
 const VaccineForm = () => {
   const {
@@ -11,6 +17,7 @@ const VaccineForm = () => {
     hadVaccine,
     vaccineStage,
     notVaccinated,
+    isValid,
   } = useVaccineForm();
 
   return (
@@ -151,8 +158,8 @@ const VaccineForm = () => {
             <LeftArrow />
           </button>
 
-          <button type='submit'>
-            <RightArrow />
+          <button type='submit' {...(isValid ? {} : { disabled: true })}>
+            {isValid ? <RightArrow /> : <DisabledRightArrow />}
           </button>
         </div>
       </form>

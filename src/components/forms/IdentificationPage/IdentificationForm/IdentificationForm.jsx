@@ -1,8 +1,14 @@
-import { RightArrow, CustomInput, Label } from '@/components';
+import {
+  RightArrow,
+  CustomInput,
+  Label,
+  DisabledRightArrow,
+} from '@/components';
 import UseIdentificationForm from './UseIdentificationForm';
 
 const IdentificationForm = () => {
-  const { register, handleSubmit, onSubmit, errors } = UseIdentificationForm();
+  const { register, handleSubmit, onSubmit, errors, isValid } =
+    UseIdentificationForm();
 
   return (
     <div className='flex-1'>
@@ -84,9 +90,10 @@ const IdentificationForm = () => {
 
         <button
           type='submit'
+          {...(isValid ? {} : { disabled: true })}
           className='absolute cursor-pointer -bottom-6 left-[45%]'
         >
-          <RightArrow />
+          {isValid ? <RightArrow /> : <DisabledRightArrow />}
         </button>
       </form>
     </div>

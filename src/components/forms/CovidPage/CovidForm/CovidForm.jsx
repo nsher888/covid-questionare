@@ -6,6 +6,7 @@ import {
   Label,
   DateInput,
   CustomInput,
+  DisabledRightArrow,
 } from '@/components';
 import './CovidForm.css';
 
@@ -18,6 +19,7 @@ const CovidForm = () => {
     hadCovid,
     antiBodies,
     navigateToPreviousPage,
+    isValid,
   } = useCovidForm();
 
   return (
@@ -128,8 +130,8 @@ const CovidForm = () => {
             <LeftArrow />
           </button>
 
-          <button type='submit'>
-            <RightArrow />
+          <button type='submit' {...(isValid ? {} : { disabled: true })}>
+            {isValid ? <RightArrow /> : <DisabledRightArrow />}
           </button>
         </div>
       </form>
