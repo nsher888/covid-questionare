@@ -9,7 +9,7 @@ const useCovidForm = () => {
 
   const { register, handleSubmit, formState, watch, unregister } = useForm({
     defaultValues: formData,
-    mode: 'onChange',
+    mode: 'all',
   });
 
   const { errors } = formState;

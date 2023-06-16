@@ -91,15 +91,24 @@ const CovidForm = () => {
           <div className='flex flex-col'>
             <Label title='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*' />
             <div className='max-w-lg pl-5 mt-4'>
-              <DateInput id='test_date' name='test_date'register={register('test_date')} />
+              <DateInput
+                id='test_date'
+                name='test_date'
+                register={register('test_date')}
+              />
               <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
                 {errors.test_date?.message}
               </p>
               <CustomInput
-                type='number'
+                type='text'
                 name='number'
                 placeholder='ანტისხეულების რაოდენობა'
-                register={register('number')}
+                register={register('number', {
+                  pattern: {
+                    value: /^[0-9]*$/,
+                    message: 'შეიყვანეთ მხოლოდ ციფრები',
+                  },
+                })}
               />
               <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
                 {errors.number?.message}

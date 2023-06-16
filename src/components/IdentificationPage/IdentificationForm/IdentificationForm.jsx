@@ -27,8 +27,8 @@ const IdentificationForm = () => {
             register={register('first_name', {
               required: 'მოცემული ველის შევსება სავალდებულოა',
               minLength: {
-                value: 2,
-                message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                value: 3,
+                message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
               },
             })}
           />
@@ -47,8 +47,8 @@ const IdentificationForm = () => {
             register={register('last_name', {
               required: 'მოცემული ველის შევსება სავალდებულოა',
               minLength: {
-                value: 2,
-                message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                value: 3,
+                message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
               },
             })}
           />
