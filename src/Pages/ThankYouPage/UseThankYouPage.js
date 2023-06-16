@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { FormDataContext } from '@/context';
 
 const useThankYouPage = () => {
-  const { formData } = useContext(FormDataContext);
+  const { formData, clearFormData } = useContext(FormDataContext);
 
   const filteredData = {};
 
@@ -22,21 +22,29 @@ const useThankYouPage = () => {
   filteredData.had_vaccine = formData.had_vaccine === 'true';
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(filteredData),
-    })
-      .then((response) => {
-        sessionStorage.clear();
-        return response.statusText;
-      })
-      .catch((error) => {
+    const sendData = async () => {
+      try {
+        const response = await fetch(import.meta.env.VITE_API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(filteredData),
+        });
+
+        if (response.ok) {
+          sessionStorage.clear();
+          clearFormData();
+        } else {
+          throw new Error('Server responded with an error');
+        }
+      } catch (error) {
         console.error('Error:', error);
-      });
-  }, [filteredData]);
+      }
+    };
+
+    sendData();
+  }, []);
 };
 
 export default useThankYouPage;
