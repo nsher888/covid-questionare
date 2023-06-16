@@ -4,3 +4,4 @@ export * from './CovidPage';
 export * from './VaccinePage';
 export * from './PreferencesPage';
 export * from './ThankYouPage';
+export * from './ErrorPage';
