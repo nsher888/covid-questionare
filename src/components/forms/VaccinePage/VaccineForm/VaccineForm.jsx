@@ -39,7 +39,7 @@ const VaccineForm = () => {
               required: 'მოცემული ველის შევსება სავალდებულოა',
             })}
           />
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
             {errors.had_vaccine?.message}
           </p>
         </div>
@@ -73,7 +73,7 @@ const VaccineForm = () => {
               })}
             />
 
-            <p className='absolute text-orange-600 -bottom-7 left-5'>
+            <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
               {errors.vaccination_stage?.message}
             </p>
 
@@ -117,7 +117,7 @@ const VaccineForm = () => {
               })}
             />
 
-            <p className='absolute text-orange-600 -bottom-7 left-5'>
+            <p className='absolute text-orange-600 font-helvetica -bottom-7 left-5'>
               {errors.i_am_waiting?.message}
             </p>
 

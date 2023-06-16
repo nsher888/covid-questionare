@@ -50,7 +50,7 @@ const PreferencesForm = () => {
             })}
           />
 
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.non_formal_meetings?.message}
           </p>
         </div>
@@ -112,7 +112,7 @@ const PreferencesForm = () => {
             })}
           />
 
-          <p className='absolute text-orange-600 -bottom-7 left-5'>
+          <p className='absolute text-orange-600 -bottom-7 left-5 font-helvetica'>
             {errors.number_of_days_from_office?.message}
           </p>
         </div>
