@@ -1,10 +1,9 @@
-export { default as LogoAnimation } from './LogoAnimation';
-export { default as Layout } from './Layout';
-export { default as Header } from './Header';
-export { default as RadioInput } from './RadioInput';
-export { default as Label } from './Label';
-export { default as DateInput } from './DateInput';
-export { default as CustomInput } from './CustomInput';
-export { default as TextAreaInput } from './TextAreaInput';
-export * from './forms';
+export {
+  IdentificationAnimation,
+  IdentificationForm,
+} from './IdentificationPage';
+export { CovidAnimation, CovidForm } from './CovidPage';
+export { VaccineAnimation, VaccineForm } from './VaccinePage';
+export { PreferencesForm, PreferencesAnimation } from './PreferencesPage';
+export * from './shared';
 export * from './Icons';
