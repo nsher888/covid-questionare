@@ -19,11 +19,16 @@ const useThankYouPage = () => {
     };
   }
 
-  filteredData.had_vaccine = formData.had_vaccine === 'true';
+  if ('had_vaccine' in formData) {
+    filteredData.had_vaccine = formData.had_vaccine === 'true';
+  }
 
   useEffect(() => {
     const sendData = async () => {
       try {
+        if (Object.keys(filteredData).length === 0) {
+          return;
+        }
         const response = await fetch(import.meta.env.VITE_API_URL, {
           method: 'POST',
           headers: {
