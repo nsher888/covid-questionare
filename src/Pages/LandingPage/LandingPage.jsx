@@ -2,8 +2,11 @@ import { LogoAnimation } from '@/components';
 import { motion } from 'framer-motion';
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '@/hooks';
 
-const LandingPage = () => {
+const LandingPage = ({ title }) => {
+  useDocumentTitle(title);
+
   return (
     <div className='flex flex-col items-center justify-center min-h-screen gap-24 bg-gray-200'>
       <LogoAnimation />
